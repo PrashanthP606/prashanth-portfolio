@@ -1,0 +1,489 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prashanth - Resume (Data Scientist &amp; Analyst)</title>
+    <!-- Google Fonts: Orbitron, Rajdhani, and Share Tech Mono -->
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Rajdhani:wght@300;400;600&family=Share+Tech+Mono&display=swap" rel="stylesheet">
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --bg: #020408;
+            --surface: #0a0f1a;
+            --card: #0d1525;
+            
+            --accent: #00d4ff;     /* Electric Cyan */
+            --accent2: #a855f7;    /* Cyber Purple */
+            --accent3: #7fff00;    /* Lime Green */
+            
+            --text: #e0f0ff;
+            --muted: #5a7a99;
+            
+            --glow: 0 0 20px rgba(0, 212, 255, 0.4);
+            --glow2: 0 0 20px rgba(168, 85, 247, 0.4);
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            background-color: var(--bg);
+            color: var(--text);
+            font-family: 'Rajdhani', sans-serif;
+            line-height: 1.6;
+            padding: 60px 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+
+        .resume-container {
+            max-width: 850px;
+            width: 100%;
+            background: var(--surface);
+            border: 1px solid rgba(0, 212, 255, 0.15);
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.5);
+            border-radius: 12px;
+            padding: 45px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .resume-container::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 3px;
+            background: linear-gradient(90deg, var(--accent), var(--accent2));
+        }
+
+        .header {
+            text-align: center;
+            border-bottom: 1px solid rgba(0, 212, 255, 0.15);
+            padding-bottom: 25px;
+            margin-bottom: 30px;
+        }
+
+        .name {
+            font-family: 'Orbitron', sans-serif;
+            font-size: 32px;
+            font-weight: 900;
+            letter-spacing: 4px;
+            color: var(--text);
+            text-shadow: var(--glow);
+            margin: 0 0 12px 0;
+            text-transform: uppercase;
+        }
+
+        .contact-info {
+            font-family: 'Share Tech Mono', monospace;
+            font-size: 14px;
+            color: var(--muted);
+            letter-spacing: 1px;
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 15px 20px;
+        }
+
+        .contact-info a {
+            color: var(--accent);
+            text-decoration: none;
+            transition: color 0.3s, text-shadow 0.3s;
+        }
+
+        .contact-info a:hover {
+            color: var(--accent2);
+            text-shadow: var(--glow2);
+        }
+
+        .section-title {
+            font-family: 'Orbitron', sans-serif;
+            font-size: 16px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            border-bottom: 1px solid rgba(0, 212, 255, 0.15);
+            padding-bottom: 6px;
+            margin-top: 30px;
+            margin-bottom: 20px;
+            color: var(--accent);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .section-title i {
+            font-size: 14px;
+            color: var(--accent2);
+        }
+
+        .summary-text {
+            font-size: 15px;
+            color: var(--text);
+            font-weight: 300;
+            text-align: justify;
+        }
+
+        .item {
+            background: var(--card);
+            border: 1px solid rgba(255, 255, 255, 0.03);
+            padding: 20px;
+            border-radius: 8px;
+            margin-bottom: 15px;
+            transition: border-color 0.3s, transform 0.3s, box-shadow 0.3s;
+        }
+
+        .item:hover {
+            border-color: rgba(0, 212, 255, 0.2);
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+        }
+
+        .item-header {
+            display: flex;
+            justify-content: space-between;
+            font-weight: 700;
+            font-size: 15px;
+            color: var(--text);
+            margin-bottom: 5px;
+            font-family: 'Orbitron', sans-serif;
+            letter-spacing: 0.5px;
+        }
+
+        .item-subheader {
+            display: flex;
+            justify-content: space-between;
+            font-size: 13px;
+            color: var(--accent2);
+            margin-bottom: 10px;
+            font-family: 'Share Tech Mono', monospace;
+        }
+
+        .item-subheader a {
+            color: var(--accent);
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .item-subheader a:hover {
+            color: var(--accent2);
+            text-decoration: underline;
+        }
+
+        ul {
+            margin: 0;
+            padding-left: 20px;
+        }
+
+        li {
+            margin-bottom: 6px;
+            font-size: 14px;
+            color: var(--text);
+            font-weight: 300;
+        }
+
+        .skills-list {
+            background: var(--card);
+            border: 1px solid rgba(255, 255, 255, 0.03);
+            padding: 12px 20px;
+            border-radius: 6px;
+            margin-bottom: 10px;
+            font-size: 14px;
+            font-weight: 300;
+        }
+
+        .skills-list strong {
+            display: inline-block;
+            width: 120px;
+            color: var(--accent);
+            font-family: 'Share Tech Mono', monospace;
+            font-size: 14px;
+            letter-spacing: 1px;
+        }
+
+        .print-btn {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            padding: 10px 22px;
+            font-family: 'Share Tech Mono', monospace;
+            letter-spacing: 2px;
+            background-color: var(--accent);
+            color: var(--bg);
+            border: 1px solid var(--accent);
+            border-radius: 4px;
+            cursor: pointer;
+            font-weight: bold;
+            z-index: 1000;
+            box-shadow: var(--glow);
+            transition: all 0.3s ease;
+        }
+
+        .print-btn:hover {
+            background-color: transparent;
+            color: var(--accent);
+            box-shadow: 0 0 30px rgba(0, 212, 255, 0.6);
+        }
+
+        /* Print Media Overrides */
+        @media print {
+            .print-btn {
+                display: none;
+            }
+            body {
+                background-color: #fff !important;
+                color: #000 !important;
+                padding: 0 !important;
+            }
+            .resume-container {
+                box-shadow: none !important;
+                border: none !important;
+                padding: 0 !important;
+                max-width: 100% !important;
+                background: transparent !important;
+            }
+            .resume-container::before {
+                display: none !important;
+            }
+            .name {
+                color: #000 !important;
+                text-shadow: none !important;
+            }
+            .contact-info {
+                color: #555 !important;
+            }
+            .contact-info a {
+                color: #0066cc !important;
+                text-shadow: none !important;
+            }
+            .section-title {
+                color: #111 !important;
+                border-bottom: 1px solid #ddd !important;
+            }
+            .section-title i {
+                display: none !important;
+            }
+            .item {
+                background: transparent !important;
+                border: none !important;
+                padding: 5px 0 !important;
+                margin-bottom: 10px !important;
+            }
+            .item-header {
+                color: #000 !important;
+            }
+            .item-subheader {
+                color: #555 !important;
+            }
+            .item-subheader a {
+                color: #0066cc !important;
+            }
+            .skills-list {
+                background: transparent !important;
+                border: none !important;
+                padding: 5px 0 !important;
+            }
+            .skills-list strong {
+                color: #000 !important;
+            }
+            li {
+                color: #111 !important;
+            }
+        }
+
+        /* Mobile Responsiveness */
+        @media (max-width: 768px) {
+            body {
+                padding: 20px 10px;
+            }
+            .resume-container {
+                padding: 25px 20px;
+            }
+            .item-header, .item-subheader {
+                flex-direction: column;
+                gap: 5px;
+            }
+            .skills-list strong {
+                display: block;
+                margin-bottom: 5px;
+            }
+            .print-btn {
+                position: static;
+                margin-bottom: 20px;
+                display: block;
+                width: 100%;
+                text-align: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <button class="print-btn" onclick="window.print()">
+        <i class="fas fa-print"></i> Print / Save PDF
+    </button>
+
+    <div class="resume-container">
+        <div class="header">
+            <h1 class="name">PRASHANTH P</h1>
+            <div class="contact-info">
+                <span><i class="fas fa-phone"></i> +91 6363986280</span>
+                <span><i class="fas fa-envelope"></i> <a href="mailto:vikasprashanth04@gmail.com">vikasprashanth04@gmail.com</a></span>
+                <span><i class="fab fa-linkedin"></i> <a href="https://linkedin.com/in/prashanth" target="_blank">linkedin.com/in/prashanth</a></span>
+                <span><i class="fab fa-github"></i> <a href="https://github.com/PrashanthP606" target="_blank">github.com/PrashanthP606</a></span>
+            </div>
+        </div>
+
+        <div class="section">
+            <div class="section-title"><i class="fas fa-user-circle"></i> Summary</div>
+            <p class="summary-text">
+                A motivated and dedicated Computer Science & Engineering student, Data Scientist & Analyst with a strong interest in technology and solving real-world problems. 
+                Experienced in building responsive web systems with real-time features and possesses fundamental knowledge in machine learning algorithms, 
+                data analytics pipelines, and generative AI integrations. Enthusiastic about continuous learning, writing clean code, and automating workflows.
+            </p>
+        </div>
+
+        <div class="section">
+            <div class="section-title"><i class="fas fa-graduation-cap"></i> Education</div>
+            <div class="item">
+                <div class="item-header">
+                    <span>Basaveshwar Engineering College, Bagalkote</span>
+                    <span>2022 – Present</span>
+                </div>
+                <div class="item-subheader">
+                    <span>B.E. in Computer Science and Engineering</span>
+                    <span>4th Year</span>
+                </div>
+            </div>
+            <div class="item">
+                <div class="item-header">
+                    <span>Dr. Thimmareddy PU College, Davangere</span>
+                    <span>2020 – 2022</span>
+                </div>
+                <div class="item-subheader">
+                    <span>Pre-University Course in Science (PCMB)</span>
+                    <span>94.88%</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="section">
+            <div class="section-title"><i class="fas fa-briefcase"></i> Experience</div>
+            <div class="item">
+                <div class="item-header">
+                    <span>Tech Fortune Technologies, Bengaluru</span>
+                    <span>2024</span>
+                </div>
+                <div class="item-subheader">
+                    <span>Data Science &amp; Analyst Intern</span>
+                    <span>Completed &middot; <a href="https://drive.google.com/file/d/1x_nqiZkzntj11uAfHzDbK1ldKsoGpVGl/view?usp=sharing" target="_blank"><i class="fas fa-external-link-alt"></i> Certificate</a></span>
+                </div>
+                <ul>
+                    <li>Gained hands-on experience in data analytics, preprocessing structured datasets, and building predictive models.</li>
+                    <li>Utilized Python libraries (Pandas, NumPy, Scikit-Learn) for exploratory data analysis (EDA) and visualizing datasets.</li>
+                    <li>Evaluated machine learning algorithms and established metrics to assess model accuracy and performance.</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="section">
+            <div class="section-title"><i class="fas fa-project-diagram"></i> Projects</div>
+            
+            <div class="item">
+                <div class="item-header">
+                    <span>APMC Price Pulse</span>
+                    <span>Oct 2024</span>
+                </div>
+                <div class="item-subheader">
+                    <span>HTML, CSS, JS, Firebase, ARIMA, Python</span>
+                    <span><a href="https://github.com/PrashanthP606/APMC-Price-Pulse" target="_blank"><i class="fab fa-github"></i> Source Code</a></span>
+                </div>
+                <ul>
+                    <li>Developed a web application that predicts crop and grocery prices in APMC markets using the ARIMA forecasting model.</li>
+                    <li>Built real-time responsive updates to help farmers and buyers make data-driven sales decisions.</li>
+                    <li>Integrated Firebase for database storage and secure user authorization mechanisms.</li>
+                </ul>
+            </div>
+
+            <div class="item">
+                <div class="item-header">
+                    <span>IPL Score Prediction</span>
+                    <span>Mar 2025</span>
+                </div>
+                <div class="item-subheader">
+                    <span>Python, Deep Learning, Neural Networks</span>
+                    <span><a href="https://github.com/PrashanthP606/IPL-Score-Prediction" target="_blank"><i class="fab fa-github"></i> Source Code</a></span>
+                </div>
+                <ul>
+                    <li>Forecasts expected total cricket scores in IPL mid-game coordinates using historical match datasets.</li>
+                    <li>Implemented regression neural networks using Keras/TensorFlow for high accuracy predictions.</li>
+                </ul>
+            </div>
+
+            <div class="item">
+                <div class="item-header">
+                    <span>Docu-Chat Gemini Chatbot</span>
+                    <span>May 2025</span>
+                </div>
+                <div class="item-subheader">
+                    <span>Python, Streamlit, Google Gemini API</span>
+                    <span><a href="https://github.com/PrashanthP606/Docuchat-Chatbot" target="_blank"><i class="fab fa-github"></i> Source Code</a></span>
+                </div>
+                <ul>
+                    <li>Developed an interactive RAG document chatbot that processes PDF, DOCX, and TXT files for context-aware responses.</li>
+                    <li>Implemented text extraction scripts and integrated the Google Gemini API for accurate answers.</li>
+                    <li>Created a clean, chat-style responsive interface using Streamlit with session history preservation.</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="section">
+            <div class="section-title"><i class="fas fa-cogs"></i> Technical Skills</div>
+            <div class="skills-list"><strong>Languages:</strong> Python, Java, C, JavaScript</div>
+            <div class="skills-list"><strong>Web:</strong> HTML5, CSS3, ES6+ JavaScript</div>
+            <div class="skills-list"><strong>Databases:</strong> SQL, Firebase, Supabase, MongoDB</div>
+            <div class="skills-list"><strong>Tools:</strong> Git, GitLab, GitHub, VS Code</div>
+            <div class="skills-list"><strong>Spoken Languages:</strong> English (Fluent), Kannada (Native), Hindi (Conversational), Telugu (Conversational)</div>
+        </div>
+
+        <div class="section">
+            <div class="section-title"><i class="fas fa-certificate"></i> Certifications</div>
+            <ul>
+                <li>Python Foundation Certification &mdash; Infosys Springboard</li>
+                <li>AI Fundamentals &mdash; IBM SkillsBuild</li>
+                <li>Front End Web Developer Certification &mdash; Infosys Springboard</li>
+                <li>Data Science & Analytics Certification &mdash; HP Life</li>
+                <li>Java Training Certification &mdash; Spoken Tutorial Project, IIT Bombay</li>
+                <li>GenAI Powered Data Analytics Job Simulation &mdash; TATA</li>
+            </ul>
+        </div>
+
+        <div class="section">
+            <div class="section-title"><i class="fas fa-trophy"></i> Achievements</div>
+            <ul>
+                <li>Successfully completed Java training program held by IIT Bombay Spoken Tutorial.</li>
+                <li>Secured <strong>5th place</strong> in TechThronix (college-level technical design event).</li>
+                <li>Ranked in the <strong>Top 10</strong> of TechIgnite (state/regional technical coding competition).</li>
+            </ul>
+        </div>
+
+        <div class="section">
+            <div class="section-title"><i class="fas fa-heart"></i> Interests</div>
+            <ul>
+                <li>Exploring Open Source Projects & contributing to developer tools</li>
+                <li>Watching Sci-Fi Movies and tech documentaries</li>
+                <li>Generative AI models and their custom API integrations</li>
+                <li>Using AI assistants to automate tasks and optimize coding productivity</li>
+            </ul>
+        </div>
+    </div>
+</body>
+</html>

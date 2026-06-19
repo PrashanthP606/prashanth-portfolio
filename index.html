@@ -1,0 +1,457 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prashanth | CS Student, Data Scientist &amp; Analyst</title>
+    <meta name="description" content="Professional Portfolio of Prashanth - Computer Science &amp; Engineering Student, Data Scientist, Analyst, and Web Developer.">
+    <!-- Google Fonts: Orbitron, Rajdhani, and Share Tech Mono -->
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Rajdhani:wght@300;400;600&family=Share+Tech+Mono&display=swap" rel="stylesheet">
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="assets/images/favicon.png">
+    <!-- Custom Stylesheet -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Preloader Screen -->
+    <div id="preloader">
+        <div class="loader-content">
+            <div class="loader-monitor">
+                <div class="monitor-screen">
+                    <span class="loader-text" id="loaderText">BOOTING SYSTEM...</span>
+                    <div class="loader-progress">
+                        <div class="loader-progress-bar" id="loaderProgressBar"></div>
+                    </div>
+                </div>
+                <div class="monitor-stand"></div>
+                <div class="monitor-base"></div>
+            </div>
+            <button id="enterBtn" class="enter-btn" style="display: none;">ENTER PORTFOLIO <i class="fas fa-chevron-right"></i></button>
+        </div>
+    </div>
+
+    <!-- Follow Cursor elements -->
+    <div class="cursor" id="cursor"></div>
+    <div class="cursor-ring" id="cursorRing"></div>
+
+    <!-- Interactive Canvas Background -->
+    <canvas id="bg-canvas"></canvas>
+
+    <!-- Navigation Header -->
+    <nav>
+        <a href="#hero" class="nav-logo">PRASHANTH</a>
+        <ul class="nav-links">
+            <li><a href="#about">About</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#skills">Skills</a></li>
+            <li><a href="#languages">Languages</a></li>
+            <li><a href="#education">Education</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+        <div class="theme-switcher" id="themeSwitcher">
+            <button class="theme-dot cyan active" data-theme="cyan" aria-label="Cyan Theme"></button>
+            <button class="theme-dot purple" data-theme="purple" aria-label="Purple Theme"></button>
+            <button class="theme-dot green" data-theme="green" aria-label="Green Theme"></button>
+        </div>
+        <a href="assets/documents/resume.html" target="_blank" class="resume-nav-btn">
+            <i class="fas fa-file-pdf"></i> Resume
+        </a>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="hero">
+        <!-- Background Video -->
+        <video autoplay muted playsinline webkit-playsinline class="hero-bg-video" id="heroVideo">
+            <source src="assets/videos/intro.mp4" type="video/mp4">
+        </video>
+        <!-- Background Overlay -->
+        <div class="hero-overlay"></div>
+        
+        <!-- Video Play/Pause Control Button -->
+        <button id="videoControlBtn" class="video-control-btn" aria-label="Pause background video">
+            <i class="fas fa-pause"></i>
+        </button>
+
+        <div class="hero-inner">
+            <div class="hero-text">
+                <p class="hero-tag">// <span id="typewriter"></span></p>
+                <h1 class="hero-name">Prashanth<span>P</span></h1>
+                <p class="hero-title">
+                    Computer Science &amp; Engineering Student &middot; Basaveshwar Engineering College 2026<br>
+                    Bagalkote, Karnataka &middot; Passionate about Data Science, Machine Learning &amp; Analytics
+                </p>
+                <div class="hero-cta">
+                    <a href="#projects" class="btn btn-solid">View Projects</a>
+                    <a href="assets/documents/resume.html" target="_blank" class="btn">View Resume</a>
+                </div>
+                <div class="stats-bar">
+                    <div class="stat">
+                        <div class="stat-num">3</div>
+                        <div class="stat-label">Projects</div>
+                    </div>
+                    <div class="stat">
+                        <div class="stat-num">4+</div>
+                        <div class="stat-label">Coding Languages</div>
+                    </div>
+                    <div class="stat">
+                        <div class="stat-num">6</div>
+                        <div class="stat-label">Certifications</div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Hero Avatar Column -->
+            <div class="hero-image-wrap">
+                <div class="hero-image-container">
+                    <img src="assets/images/avatar.jpg" alt="Prashanth P" class="hero-avatar">
+                    <div class="hero-image-overlay"></div>
+                    <div class="photo-corner tl"></div>
+                    <div class="photo-corner tr"></div>
+                    <div class="photo-corner bl"></div>
+                    <div class="photo-corner br"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about">
+        <div class="section-header reveal">
+            <span class="section-num">01 //</span>
+            <h2 class="section-title">About Me</h2>
+            <div class="section-line"></div>
+        </div>
+        <div class="about-grid reveal">
+            <div class="about-card">
+                <p class="about-card-label">Identity</p>
+                <p class="about-card-value">
+                    <strong>Prashanth P</strong> &mdash; a dedicated Computer Science &amp; Engineering student at Basaveshwar Engineering College, Bagalkote, graduating in 2026. Driven by curiosity, he has active knowledge of machine learning and generative AI.
+                </p>
+            </div>
+            <div class="about-card">
+                <p class="about-card-label">Location</p>
+                <p class="about-card-value">
+                    Based in <strong>Bagalkote, Karnataka</strong>, India. Studying at BEC, a premier technical institution, and applying computer science theories to build responsive web applications and machine learning models.
+                </p>
+            </div>
+            <div class="about-card">
+                <p class="about-card-label">Academic Path</p>
+                <p class="about-card-value">
+                    Pursuing B.E. in CSE. Completed 12th Pre-University Course in Science at <strong>Dr. Thimmareddy PU College, Davangere</strong> with an exceptional score of <strong>94.88%</strong>, establishing a strong mathematical background.
+                </p>
+            </div>
+            <div class="about-card">
+                <p class="about-card-label">Interests &amp; Goals</p>
+                <p class="about-card-value">
+                    Passionate about <strong>Large Language Models (LLMs), RAG systems, and data analytics</strong>. Experienced in integrating Gemini API into Streamlit interfaces, building predictive models, and coding in Python, Java, and JavaScript.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects">
+        <div class="projects-inner">
+            <div class="section-header reveal">
+                <span class="section-num">02 //</span>
+                <h2 class="section-title">Featured Projects</h2>
+                <div class="section-line"></div>
+            </div>
+            <div class="projects-grid">
+                <!-- Project 1 -->
+                <div class="project-card reveal">
+                    <div class="project-header">
+                        <span class="project-tag">Python / ML / Firebase</span>
+                        <a href="https://github.com/PrashanthP606/APMC-Price-Pulse" target="_blank" class="project-link" aria-label="APMC Price Pulse GitHub">
+                            <i class="fab fa-github"></i>
+                        </a>
+                    </div>
+                    <div class="project-name">APMC Price Pulse</div>
+                    <p class="project-desc">
+                        A web application that predicts crop and grocery prices in APMC markets using the ARIMA forecasting model, helping farmers and consumers make data-driven decisions.
+                    </p>
+                    <a href="https://github.com/PrashanthP606/APMC-Price-Pulse" target="_blank" class="btn-project-cta">View Source <i class="fas fa-arrow-right"></i></a>
+                </div>
+
+                <!-- Project 2 -->
+                <div class="project-card reveal">
+                    <div class="project-header">
+                        <span class="project-tag">Python / Deep Learning</span>
+                        <a href="https://github.com/PrashanthP606/IPL-Score-Prediction" target="_blank" class="project-link" aria-label="IPL Score Prediction GitHub">
+                            <i class="fab fa-github"></i>
+                        </a>
+                    </div>
+                    <div class="project-name">IPL Score Predictor</div>
+                    <p class="project-desc">
+                        Forecasts final expected cricket scores in IPL mid-game coordinates using historical match datasets and deep learning neural networks.
+                    </p>
+                    <a href="https://github.com/PrashanthP606/IPL-Score-Prediction" target="_blank" class="btn-project-cta">View Source <i class="fas fa-arrow-right"></i></a>
+                </div>
+
+                <!-- Project 3 -->
+                <div class="project-card reveal">
+                    <div class="project-header">
+                        <span class="project-tag">Python / Streamlit / LLM</span>
+                        <a href="https://github.com/PrashanthP606/Docuchat-Chatbot" target="_blank" class="project-link" aria-label="Docu-Chat GitHub">
+                            <i class="fab fa-github"></i>
+                        </a>
+                    </div>
+                    <div class="project-name">Docu-Chat Gemini</div>
+                    <p class="project-desc">
+                        An interactive RAG document chatbot that processes PDF, DOCX, and TXT files, extracts content, and integrates the Google Gemini API for context-aware responses.
+                    </p>
+                    <a href="https://github.com/PrashanthP606/Docuchat-Chatbot" target="_blank" class="btn-project-cta">View Source <i class="fas fa-arrow-right"></i></a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills">
+        <div class="skills-inner">
+            <div class="section-header reveal">
+                <span class="section-num">03 //</span>
+                <h2 class="section-title">Technical Skills</h2>
+                <div class="section-line"></div>
+            </div>
+            <div class="skills-grid">
+                <!-- Python -->
+                <div class="skill-card reveal" style="--level:85%">
+                    <span class="skill-icon">
+                        <i class="fab fa-python"></i>
+                    </span>
+                    <div class="skill-name">Python</div>
+                    <p class="skill-desc">Core scripting language used for Machine Learning, deep learning neural nets, data preprocessing, and Streamlit app development.</p>
+                    <div class="skill-bar"><div class="skill-bar-fill"></div></div>
+                </div>
+
+                <!-- Java / C -->
+                <div class="skill-card reveal" style="--level:75%">
+                    <span class="skill-icon">
+                        <i class="fas fa-code"></i>
+                    </span>
+                    <div class="skill-name">Java &amp; C Language</div>
+                    <p class="skill-desc">Object-oriented software design in Java, memory management, pointers, and algorithmic problem-solving in C.</p>
+                    <div class="skill-bar"><div class="skill-bar-fill"></div></div>
+                </div>
+
+                <!-- ML / AI -->
+                <div class="skill-card reveal" style="--level:80%">
+                    <span class="skill-icon">
+                        <i class="fas fa-brain"></i>
+                    </span>
+                    <div class="skill-name">Machine Learning &amp; AI</div>
+                    <p class="skill-desc">ARIMA time-series models, deep neural networks, and Google Gemini API integration for RAG conversational agents.</p>
+                    <div class="skill-bar"><div class="skill-bar-fill"></div></div>
+                </div>
+
+                <!-- Web Development -->
+                <div class="skill-card reveal" style="--level:85%">
+                    <span class="skill-icon">
+                        <i class="fas fa-globe"></i>
+                    </span>
+                    <div class="skill-name">Web Development</div>
+                    <p class="skill-desc">Responsive UI/UX designing using HTML5, CSS3, ES6+ JavaScript, and dynamic front-end micro-interactions.</p>
+                    <div class="skill-bar"><div class="skill-bar-fill"></div></div>
+                </div>
+
+                <!-- Databases -->
+                <div class="skill-card reveal" style="--level:80%">
+                    <span class="skill-icon">
+                        <i class="fas fa-database"></i>
+                    </span>
+                    <div class="skill-name">Databases &amp; Backend</div>
+                    <p class="skill-desc">Relational querying with SQL, Firebase realtime databases and authentication, Supabase and MongoDB document schemas.</p>
+                    <div class="skill-bar"><div class="skill-bar-fill"></div></div>
+                </div>
+
+                <!-- Git & Tools -->
+                <div class="skill-card reveal" style="--level:85%">
+                    <span class="skill-icon">
+                        <i class="fab fa-git-alt"></i>
+                    </span>
+                    <div class="skill-name">Git &amp; Dev Tools</div>
+                    <p class="skill-desc">Version control using Git, remote repository collaboration on GitHub &amp; GitLab, and command line developer workflows.</p>
+                    <div class="skill-bar"><div class="skill-bar-fill"></div></div>
+                </div>
+            </div>
+
+            <!-- Skills Showcase Video -->
+            <div class="skills-showcase reveal">
+                <div class="showcase-video-wrap">
+                    <video autoplay muted loop playsinline class="showcase-video" id="skillsVideo" poster="assets/images/skills_showcase.png">
+                        Your browser does not support the video tag.
+                    </video>
+                    <div class="video-overlay"></div>
+                    <div class="photo-corner tl"></div>
+                    <div class="photo-corner tr"></div>
+                    <div class="photo-corner bl"></div>
+                    <div class="photo-corner br"></div>
+                </div>
+                <div class="showcase-info">
+                    <p class="showcase-tag">// Skills Showcase</p>
+                    <h3 class="showcase-title">AI &amp; Coding in Action</h3>
+                    <p class="showcase-desc">
+                        A demonstration of my technical capabilities, featuring machine learning model runs, web system deployments, and generative AI integrations.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Languages Section -->
+    <section id="languages">
+        <div class="section-header reveal">
+            <span class="section-num">04 //</span>
+            <h2 class="section-title">Languages</h2>
+            <div class="section-line"></div>
+        </div>
+        <div class="lang-grid reveal">
+            <div class="lang-card">
+                <span class="lang-flag"><i class="fas fa-flag-usa"></i></span>
+                <div class="lang-name">English</div>
+                <div class="lang-level">Fluent</div>
+            </div>
+            <div class="lang-card">
+                <span class="lang-flag"><i class="fas fa-location-dot"></i></span>
+                <div class="lang-name">Kannada</div>
+                <div class="lang-level">Native</div>
+            </div>
+            <div class="lang-card">
+                <span class="lang-flag"><i class="fas fa-earth-asia"></i></span>
+                <div class="lang-name">Hindi</div>
+                <div class="lang-level">Conversational</div>
+            </div>
+            <div class="lang-card">
+                <span class="lang-flag"><i class="fas fa-comments"></i></span>
+                <div class="lang-name">Telugu</div>
+                <div class="lang-level">Conversational</div>
+            </div>
+            <div class="lang-card" style="border-color:rgba(127,255,0,0.2)">
+                <span class="lang-flag"><i class="fas fa-laptop-code"></i></span>
+                <div class="lang-name">Python / Java / JS</div>
+                <div class="lang-level" style="color:var(--accent3)">Code</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Education & Experience Section -->
+    <section id="education">
+        <div class="edu-inner">
+            <div class="section-header reveal">
+                <span class="section-num">05 //</span>
+                <h2 class="section-title">Education &amp; Experience</h2>
+                <div class="section-line"></div>
+            </div>
+            <div class="timeline reveal">
+                <div class="timeline-item">
+                    <div class="timeline-dot" style="background:var(--accent3);box-shadow:0 0 15px var(--accent3)"></div>
+                    <div class="timeline-date">2022 &mdash; Present</div>
+                    <div class="timeline-title">B.E. in Computer Science &amp; Engineering</div>
+                    <div class="timeline-sub">Basaveshwar Engineering College &middot; Bagalkote, Karnataka</div>
+                    <div class="timeline-badge" style="border-color:rgba(127,255,0,0.4);color:var(--accent3)">Currently in 4th Year</div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-dot" style="background:var(--accent2);box-shadow:0 0 15px var(--accent2)"></div>
+                    <div class="timeline-date">2024 (Internship)</div>
+                    <div class="timeline-title">Data Science &amp; Analyst Intern</div>
+                    <div class="timeline-sub">Tech Fortune Technologies &middot; Bengaluru, Karnataka</div>
+                    <div class="timeline-badge" style="border-color:rgba(168,85,247,0.4);color:var(--accent2)">Completed</div>
+                    <a href="https://drive.google.com/file/d/1x_nqiZkzntj11uAfHzDbK1ldKsoGpVGl/view?usp=sharing" target="_blank" class="timeline-cert-btn">
+                        <i class="fas fa-certificate"></i> View Certificate
+                    </a>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-date">Completed 2022</div>
+                    <div class="timeline-title">Pre-University Course in Science (94.88%)</div>
+                    <div class="timeline-sub">Dr. Thimmareddy PU College &middot; Davangere, Karnataka</div>
+                    <div class="timeline-badge">Completed</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact">
+        <div class="section-header reveal">
+            <span class="section-num">06 //</span>
+            <h2 class="section-title">Contact</h2>
+            <div class="section-line"></div>
+        </div>
+        <div class="contact-grid reveal">
+            <a class="contact-card" href="mailto:vikasprashanth04@gmail.com">
+                <div class="contact-icon">
+                    <i class="fas fa-envelope"></i>
+                </div>
+                <div class="contact-label">Gmail</div>
+                <div class="contact-value">vikasprashanth04@gmail.com</div>
+            </a>
+            <a class="contact-card" href="tel:+916363986280">
+                <div class="contact-icon">
+                    <i class="fas fa-phone"></i>
+                </div>
+                <div class="contact-label">Phone</div>
+                <div class="contact-value">+91 6363986280</div>
+            </a>
+            <a class="contact-card" href="https://linkedin.com/in/prashanth" target="_blank" rel="noopener">
+                <div class="contact-icon">
+                    <i class="fab fa-linkedin-in"></i>
+                </div>
+                <div class="contact-label">LinkedIn</div>
+                <div class="contact-value">prashanth</div>
+            </a>
+            <a class="contact-card" href="https://github.com/PrashanthP606" target="_blank" rel="noopener">
+                <div class="contact-icon">
+                    <i class="fab fa-github"></i>
+                </div>
+                <div class="contact-label">GitHub</div>
+                <div class="contact-value">PrashanthP606</div>
+            </a>
+        </div>
+    </section>
+
+    <!-- Chatbot Window Dialog -->
+    <div class="chat-window" id="chatWindow">
+        <div class="chat-header">
+            <div class="chat-header-info">
+                <i class="fas fa-robot"></i>
+                <div class="chat-header-title">
+                    <h4>Prashanth AI Bot</h4>
+                    <span class="chat-header-status">Online</span>
+                </div>
+            </div>
+            <button class="chat-close-btn" id="chatCloseBtn" aria-label="Close chat"><i class="fas fa-times"></i></button>
+        </div>
+        <div class="chat-body" id="chatBody"></div>
+        <div class="chat-suggestions">
+            <div class="chat-suggestion-chip">What is APMC Price Pulse?</div>
+            <div class="chat-suggestion-chip">Tell me about Docu-Chat</div>
+            <div class="chat-suggestion-chip">Where do you study?</div>
+            <div class="chat-suggestion-chip">List your technical skills</div>
+        </div>
+        <div class="chat-footer">
+            <input type="text" class="chat-input" id="chatInput" placeholder="Type a question...">
+            <button class="chat-send-btn" id="chatSendBtn" aria-label="Send message"><i class="fas fa-paper-plane"></i></button>
+        </div>
+    </div>
+
+    <!-- Floating RAG Chatbot FAB Launcher -->
+    <button class="chatbot-fab" id="chatbotFab" aria-label="Chat with AI Assistant">
+        <i class="fas fa-robot"></i>
+    </button>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-name">PRASHANTH P</div>
+        <div class="footer-tagline">// CS Student &middot; Data Scientist &amp; Analyst &middot; Problem Solver</div>
+        <div class="footer-copy">&copy; 2026 Prashanth P &middot; Basaveshwar Engineering College &middot; Bagalkote</div>
+    </footer>
+
+    <!-- Custom Script -->
+    <script src="script.js"></script>
+</body>
+</html>
