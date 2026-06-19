@@ -90,9 +90,11 @@ body {
     border-radius: 50%;
     position: fixed;
     pointer-events: none;
-    z-index: 9999;
+    z-index: 10002; /* Higher than preloader z-index (10000) */
     transform: translate(-50%, -50%);
     box-shadow: 0 0 15px var(--accent), 0 0 30px var(--accent);
+    opacity: 0;
+    transition: opacity 0.3s ease;
 }
 
 .cursor-ring {
@@ -102,9 +104,10 @@ body {
     border-radius: 50%;
     position: fixed;
     pointer-events: none;
-    z-index: 9998;
+    z-index: 10001; /* Higher than preloader z-index (10000) */
     transform: translate(-50%, -50%);
-    transition: transform 0.15s ease, width 0.2s, height 0.2s, border-color 0.2s;
+    opacity: 0;
+    transition: opacity 0.3s ease, transform 0.15s ease, width 0.2s, height 0.2s, border-color 0.2s;
 }
 
 /* Background Canvas */
@@ -1465,7 +1468,7 @@ footer {
     padding: 0.8rem 2.2rem;
     border-radius: 30px;
     box-shadow: var(--glow), 0 0 30px rgba(0, 212, 255, 0.2);
-    cursor: pointer;
+    cursor: none;
     transition: all 0.3s;
     animation: fadeIn 0.8s forwards, pulseGlow 2s infinite;
 }

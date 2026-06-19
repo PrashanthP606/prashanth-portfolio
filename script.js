@@ -90,10 +90,28 @@ document.addEventListener('DOMContentLoaded', () => {
     const cursor = document.getElementById('cursor');
     const ring = document.getElementById('cursorRing');
     let mx = 0, my = 0, rx = 0, ry = 0;
+    let cursorInitialized = false;
 
     document.addEventListener('mousemove', e => {
         mx = e.clientX;
         my = e.clientY;
+        if (!cursorInitialized) {
+            cursorInitialized = true;
+            if (cursor) cursor.style.opacity = '1';
+            if (ring) ring.style.opacity = '1';
+        }
+    });
+
+    document.addEventListener('mouseleave', () => {
+        if (cursor) cursor.style.opacity = '0';
+        if (ring) ring.style.opacity = '0';
+    });
+
+    document.addEventListener('mouseenter', () => {
+        if (cursorInitialized) {
+            if (cursor) cursor.style.opacity = '1';
+            if (ring) ring.style.opacity = '1';
+        }
     });
 
     function animateCursor() {
